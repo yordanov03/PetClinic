@@ -9,6 +9,5 @@ namespace Domain.Models
         public Doctor Doctor { get; private set; }
         public DateTime Time { get; private set; }
         public Pet Pet { get; private set; }
-        public bool MyProperty { get; private set; }
     }
 }
