@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Models
+﻿namespace PetClinic.Domain.Models
 {
     public class ModelConstants
     {

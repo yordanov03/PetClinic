@@ -1,4 +1,4 @@
-﻿using CarRentalSystem.Domain.Common;
+﻿using PetClinic.Domain.Common;
 using System;
 
 namespace Domain.Models

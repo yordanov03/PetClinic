@@ -1,4 +1,4 @@
-﻿using CarRentalSystem.Domain.Exceptions;
+﻿using PetClinic.Domain.Exceptions;
 
 namespace Domain.Exceptions
 {

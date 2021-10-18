@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Common
+﻿namespace PetClinic.Domain.Common
 {
     using System.Collections.Generic;
     using System.Linq;

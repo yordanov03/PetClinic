@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Infrastructure
+﻿namespace PetClinic.Infrastructure
 {
     public interface IInitializer
     {
