@@ -1,6 +1,9 @@
-﻿using PetClinic.Domain.Common;
+﻿using Domain.Exceptions;
+using PetClinic.Domain.Common;
 using System.Collections.Generic;
 using System.Linq;
+using static PetClinic.Domain.Models.ModelConstants.Common;
+//using PetClinic.Domain.Models;
 
 namespace Domain.Models
 {
@@ -30,5 +33,34 @@ namespace Domain.Models
         public string Picutre { get; private set; }
         public Doctor Doctor { get; private set; }
         public IReadOnlyCollection<Appointment> MedicalHistory => this.medicalHistory.ToList().AsReadOnly();
+
+        private void Validate(
+            string name,
+            int age,
+            string picture)
+        {
+            ValidateName(name);
+            ValidateAge(age);
+            ValidatePictureUrl(picture);
+        }
+
+        private void ValidateName(string name) =>
+            Guard.ForStringLength<InvalidPetException>(
+                name,
+                MinNameLength,
+                MaxNameLength,
+                nameof(this.Name));
+
+        private void ValidateAge(int age) =>
+            Guard.ForAge<InvalidPetException>(
+                age,
+                Zero,
+                MaxAge,
+                nameof(this.Age));
+
+        private void ValidatePictureUrl(string picture) =>
+            Guard.ForValidUrl<InvalidPetException>(
+                picture,
+                nameof(this.Picutre));
     }
 }
