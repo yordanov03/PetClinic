@@ -1,4 +1,5 @@
-﻿using FakeItEasy;
+﻿using Domain.Models;
+using FakeItEasy;
 using System;
 
 namespace Domain.Tests.Fakes
