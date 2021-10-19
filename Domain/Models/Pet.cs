@@ -3,13 +3,13 @@ using PetClinic.Domain.Common;
 using System.Collections.Generic;
 using System.Linq;
 using static PetClinic.Domain.Models.ModelConstants.Common;
-//using PetClinic.Domain.Models;
 
 namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
         private readonly List<Appointment> medicalHistory;
+
         public Pet(
             string name,
             int age,
@@ -18,6 +18,8 @@ namespace Domain.Models
             string picture,
             Doctor doctor)
         {
+            Validate(name, age, picture);
+
             this.Name = name;
             this.Age = age;
             this.Spicie = spicie;
