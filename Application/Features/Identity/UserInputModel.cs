@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Features.Identity.Commands
+﻿namespace PetClinic.Application.Features.Identity.Commands
 {
     public abstract class UserInputModel
     {

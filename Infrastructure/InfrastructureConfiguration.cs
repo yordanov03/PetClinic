@@ -1,8 +1,8 @@
 ﻿using Application.Contracts;
 using Application.Features.Identity;
 using AutoMapper.Configuration;
-using CarRentalSystem.Application;
-using CarRentalSystem.Infrastructure;
+using PetClinic.Application;
+using PetClinic.Infrastructure;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

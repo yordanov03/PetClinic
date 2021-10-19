@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Infrastructure.Persistence
+﻿namespace PetClinic.Infrastructure.Persistence
 {
     using Domain.Common;
     using Microsoft.EntityFrameworkCore;

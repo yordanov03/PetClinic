@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Web.Common
+﻿namespace PetClinic.Web.Common
 {
     using System.Threading.Tasks;
     using Application.Common;

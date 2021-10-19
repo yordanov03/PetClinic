@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application
+﻿namespace PetClinic.Application
 {
     public class ApplicationSettings
     {

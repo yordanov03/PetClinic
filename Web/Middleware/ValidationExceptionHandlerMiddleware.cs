@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Web.Middleware
+﻿namespace PetClinic.Web.Middleware
 {
     using System;
     using System.Net;
