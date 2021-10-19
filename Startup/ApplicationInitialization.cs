@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Startup
+﻿namespace PetClinic.Startup
 {
     using Infrastructure;
     using Microsoft.AspNetCore.Builder;

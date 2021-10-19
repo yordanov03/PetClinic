@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Specifications
+﻿namespace PetClinic.Domain.Specifications
 {
     using System;
     using System.Collections.Concurrent;

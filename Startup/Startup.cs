@@ -1,9 +1,9 @@
-using CarRentalSystem.Application;
-using CarRentalSystem.Domain;
-using CarRentalSystem.Infrastructure;
-using CarRentalSystem.Startup;
-using CarRentalSystem.Web;
-using CarRentalSystem.Web.Middleware;
+using PetClinic.Application;
+using PetClinic.Domain;
+using PetClinic.Infrastructure;
+using PetClinic.Startup;
+using PetClinic.Web;
+using PetClinic.Web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

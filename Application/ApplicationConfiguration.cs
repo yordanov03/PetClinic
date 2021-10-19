@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application
+﻿namespace PetClinic.Application
 {
     using Behaviours;
     using MediatR;

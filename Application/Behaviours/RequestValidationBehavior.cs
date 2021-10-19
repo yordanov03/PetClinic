@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Behaviours
+﻿namespace PetClinic.Application.Behaviours
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

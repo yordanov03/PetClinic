@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Features.Identity.Commands.ChangePassword
+﻿namespace PetClinic.Application.Features.Identity.Commands.ChangePassword
 {
     using System.Threading;
     using System.Threading.Tasks;

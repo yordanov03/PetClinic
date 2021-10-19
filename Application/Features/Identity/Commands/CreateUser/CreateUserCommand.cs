@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Features.Identity.Commands.CreateUser
+﻿namespace PetClinic.Application.Features.Identity.Commands.CreateUser
 {
     using Common;
     using global::Application.Features.Identity;

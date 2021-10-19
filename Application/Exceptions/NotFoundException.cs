@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Exceptions
+﻿namespace PetClinic.Application.Exceptions
 {
     using System;
 

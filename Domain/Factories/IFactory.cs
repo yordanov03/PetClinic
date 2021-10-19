@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Factories
+﻿namespace PetClinic.Domain.Factories
 {
     using Common;
 
