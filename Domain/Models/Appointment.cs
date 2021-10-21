@@ -7,18 +7,17 @@ namespace Domain.Models
     public class Appointment : Entity<int>
     {
         public Appointment(
-            Doctor doctor,
+            string diagnose,
             DateTime time,
             Pet pet)
         {
             Validate(time);
 
-            this.Doctor = doctor;
+            this.Diagnose = diagnose;
             this.Time = time;
             this.Pet = pet;
         }
         public string Diagnose { get; private set; }
-        public Doctor Doctor { get; private set; }
         public DateTime Time { get; private set; }
         public Pet Pet { get; private set; }
 

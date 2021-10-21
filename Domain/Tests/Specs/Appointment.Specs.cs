@@ -1,4 +1,9 @@
-﻿using Xunit;
+﻿using Domain.Models;
+using FakeItEasy;
+using Xunit;
+using FluentAssertions;
+using System;
+using Domain.Exceptions;
 
 namespace Domain.Tests
 {
@@ -8,8 +13,10 @@ namespace Domain.Tests
         public void CreateValidAppointment()
         {
             //Arrange
-            //Act
+            Action appointment = () => A.Dummy<Appointment>();
+
             //Assert
+            appointment.Should().NotThrow<InvalidAppointmentException>();
         }
     }
 }

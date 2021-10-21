@@ -11,10 +11,21 @@ namespace Domain.Tests.Fakes
             public Priority Priority => Priority.Default;
 
             public bool CanCreate(Type type) => true;
-            
 
             public object Create(Type type) =>
-                new Appointment()
+                new Appointment(
+                    "some diagnose",
+                    DateTime.Now,
+                    new Pet(
+                        "a pet",
+                        3,
+                        Spicie.cat,
+                        new Owner(
+                            "some owner",
+                            "+1234568"),
+                        "https://toppng.com/uploads/preview/cat-11525956124t37pf0dhfz.png",
+                        new Doctor(
+                            "some doctor")));
             
         }
     }
