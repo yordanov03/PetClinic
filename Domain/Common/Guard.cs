@@ -1,8 +1,10 @@
-﻿namespace CarRentalSystem.Domain.Common
+﻿namespace PetClinic.Domain.Common
 {
     using System;
+    using System.Text.RegularExpressions;
     using Exceptions;
     using Models;
+    using static PetClinic.Domain.Models.ModelConstants;
 
     public static class Guard
     {
@@ -30,6 +32,17 @@
             ThrowException<TException>($"{name} must have between {minLength} and {maxLength} symbols.");
         }
 
+        public static void ForAge<TException>(int value, int minLength, int maxLength, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            if (value >= 0)
+            {
+                return;
+            }
+
+            ThrowException<TException>($"Age must be between {minLength} and {maxLength}.");
+        }
+
         public static void AgainstOutOfRange<TException>(int number, int min, int max, string name = "Value")
             where TException : BaseDomainException, new()
         {
@@ -52,11 +65,42 @@
             ThrowException<TException>($"{name} must be between {min} and {max}.");
         }
 
+        public static void ForValidTime<TException>(DateTime time, string name = "Value")
+            where TException : BaseDomainException, new()
+        {
+            var currentTime = DateTime.Now;
+
+            if (time > currentTime.AddHours(Common.MaxTimeDifferenceInHours))
+            {
+                return;
+            }
+
+            ThrowException<TException>($"Time cannot be in the past.");
+        }
+
         public static void ForValidUrl<TException>(string url, string name = "Value")
             where TException : BaseDomainException, new()
         {
+            bool validPicUrl = Regex.IsMatch(url, PicUrl.MatchingUrl);
+
             if (url.Length <= ModelConstants.Common.MaxUrlLength && 
-                Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                Uri.IsWellFormedUriString(url, UriKind.Absolute) && 
+                validPicUrl)
+            {
+                return;
+            }
+
+            ThrowException<TException>($"{name} must be a valid URL.");
+        }
+
+        public static void ForValidPhoneNumber<TException>(string phoneNumber, string name = "Value")
+           where TException : BaseDomainException, new()
+        {
+            bool validPhoneNumber = Regex.IsMatch(phoneNumber, PhoneNumber.PhoneNumberRegularExpression);
+
+            if (phoneNumber.Length >= ModelConstants.PhoneNumber.MinPhoneNumberLength &&
+                phoneNumber.Length<= ModelConstants.PhoneNumber.MaxPhoneNumberLength &&
+                validPhoneNumber)
             {
                 return;
             }

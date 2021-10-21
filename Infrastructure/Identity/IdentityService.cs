@@ -1,8 +1,8 @@
 ﻿using Application.Features.Identity;
-using CarRentalSystem.Application.Common;
-using CarRentalSystem.Application.Features.Identity.Commands;
-using CarRentalSystem.Application.Features.Identity.Commands.ChangePassword;
-using CarRentalSystem.Application.Features.Identity.Commands.LoginUser;
+using PetClinic.Application.Common;
+using PetClinic.Application.Features.Identity.Commands;
+using PetClinic.Application.Features.Identity.Commands.ChangePassword;
+using PetClinic.Application.Features.Identity.Commands.LoginUser;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;

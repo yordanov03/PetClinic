@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain
+﻿namespace PetClinic.Domain
 {
     using Factories;
     using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,5 @@
 ﻿using Application.Contracts;
-using CarRentalSystem.Application.Common;
+using PetClinic.Application.Common;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;

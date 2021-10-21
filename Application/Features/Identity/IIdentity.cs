@@ -1,7 +1,7 @@
-﻿using CarRentalSystem.Application.Common;
-using CarRentalSystem.Application.Features.Identity.Commands;
-using CarRentalSystem.Application.Features.Identity.Commands.ChangePassword;
-using CarRentalSystem.Application.Features.Identity.Commands.LoginUser;
+﻿using PetClinic.Application.Common;
+using PetClinic.Application.Features.Identity.Commands;
+using PetClinic.Application.Features.Identity.Commands.ChangePassword;
+using PetClinic.Application.Features.Identity.Commands.LoginUser;
 using System.Threading.Tasks;
 
 namespace Application.Features.Identity

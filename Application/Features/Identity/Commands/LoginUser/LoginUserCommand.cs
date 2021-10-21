@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Application.Features.Identity.Commands.LoginUser
+﻿namespace PetClinic.Application.Features.Identity.Commands.LoginUser
 {
     using System.Threading;
     using System.Threading.Tasks;
