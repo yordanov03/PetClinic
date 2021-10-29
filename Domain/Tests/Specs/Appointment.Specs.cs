@@ -18,5 +18,35 @@ namespace Domain.Tests
             //Assert
             appointment.Should().NotThrow<InvalidAppointmentException>();
         }
+
+        [Fact]
+        public void UpdateAppointmentTime()
+        {
+            //Arrange
+            DateTime updatedAppointmentTime = DateTime.Now.AddHours(1);
+            var appointment = A.Dummy<Appointment>();
+
+            //Act
+            appointment.UpdateAppointmentTime(updatedAppointmentTime);
+
+            //Assert
+            Assert.Equal(appointment.AppointmentTime, updatedAppointmentTime);
+
+        }
+
+        [Fact]
+        public void UpdateDiagnose()
+        {
+            //Arrange
+            var updatedDiagnose = "updated diagnose";
+            var appointment = A.Dummy<Appointment>();
+
+            //Act
+            appointment.UpdateDiagnose(updatedDiagnose);
+
+            //Assert
+            Assert.Equal(appointment.Diagnose, updatedDiagnose);
+
+        }
     }
 }

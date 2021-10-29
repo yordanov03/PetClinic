@@ -15,8 +15,7 @@ namespace Domain.Models
             int age,
             Spicie spicie,
             Owner owner,
-            string picture,
-            Doctor doctor)
+            string picture)
         {
             Validate(name, age, picture);
 
@@ -26,14 +25,12 @@ namespace Domain.Models
             this.Owner = owner;
             this.Picutre = picture;
             this.medicalHistory = new List<Appointment>();
-            this.Doctor = doctor;
         }
         public string Name { get; private set; }
         public int Age { get; private set; }
         public Spicie Spicie{ get; private set; }
         public Owner Owner { get; private set; }
         public string Picutre { get; private set; }
-        public Doctor Doctor { get; private set; }
         public IReadOnlyCollection<Appointment> MedicalHistory => this.medicalHistory.ToList().AsReadOnly();
 
         private void Validate(
@@ -64,5 +61,19 @@ namespace Domain.Models
             Guard.ForValidUrl<InvalidPetException>(
                 picture,
                 nameof(this.Picutre));
+
+        public Pet UpdateAge(int age)
+        {
+            ValidateAge(age);
+            this.Age = age;
+            return this;
+        }
+
+        public Pet UpdatePicture(string picture)
+        {
+            ValidatePictureUrl(picture);
+            this.Picutre = picture;
+            return this;
+        }
     }
 }

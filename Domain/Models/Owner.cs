@@ -43,5 +43,12 @@ namespace Domain.Models
             Guard.ForValidPhoneNumber<InvalidOwnerException>(
                 phoneNumber,
                 nameof(PhoneNumber));
+
+        public Owner UpdatePhoneNumber(string phoneNumber)
+        {
+            ValidatePhoneNumber(phoneNumber);
+            this.PhoneNumber = phoneNumber;
+            return this;
+        }
     }
 }

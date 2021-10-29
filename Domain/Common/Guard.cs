@@ -68,9 +68,8 @@
         public static void ForValidTime<TException>(DateTime time, string name = "Value")
             where TException : BaseDomainException, new()
         {
-            var currentTime = DateTime.Now;
 
-            if (time > currentTime.AddHours(Common.MaxTimeDifferenceInHours))
+            if (time >= DateTime.Now.AddHours(-1))
             {
                 return;
             }
