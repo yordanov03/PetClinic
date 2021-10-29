@@ -14,7 +14,7 @@ namespace Domain.Tests.Fakes
 
             public object? Create(Type type) =>
                 new Appointment(
-                    "some diagnose",
+                    "",
                     DateTime.Now,
                     new Pet(
                         "a pet",
