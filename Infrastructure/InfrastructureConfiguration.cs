@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using Infrastructure.Persistence;
+using Infrastructure.Persistence.Repositories;
 
 namespace Infrastructure
 {
@@ -23,7 +24,8 @@ namespace Infrastructure
             .UseSqlServer(
                 configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(
-                    typeof(PetClinicDbContext).Assembly.FullName)));
+                    typeof(PetClinicDbContext).Assembly.FullName)))
+            .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
 
         //    public static IServiceCollection AddInfrastructure(
         //        this IServiceCollection services,
