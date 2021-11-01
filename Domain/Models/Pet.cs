@@ -24,7 +24,6 @@ namespace Domain.Models
             this.Spicie = spicie;
             this.Owner = owner;
             this.PicutreUrl = pictureUrl;
-            this.medicalHistory = new List<Appointment>();
         }
 
         private Pet(
@@ -38,14 +37,12 @@ namespace Domain.Models
             this.PicutreUrl = pictureUrl;
             this.Spicie = default!;
             this.Owner = default!;
-            this.medicalHistory = new List<Appointment>();
         }
         public string Name { get; private set; }
         public int Age { get; private set; }
         public Spicie Spicie { get; private set; }
         public Owner Owner { get; private set; }
         public string PicutreUrl { get; private set; }
-        public IReadOnlyCollection<Appointment> MedicalHistory => this.medicalHistory.ToList().AsReadOnly();
 
         private void Validate(
             string name,
