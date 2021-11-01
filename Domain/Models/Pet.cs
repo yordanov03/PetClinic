@@ -8,8 +8,6 @@ namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
-        private readonly List<Appointment> medicalHistory;
-
         public Pet(
             string name,
             int age,
