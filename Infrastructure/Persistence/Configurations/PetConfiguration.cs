@@ -22,11 +22,6 @@ namespace Infrastructure.Persistence.Configurations
                 .IsRequired();
 
             builder
-                .HasMany(p => p.MedicalHistory)
-                .WithOne()
-                .HasForeignKey(mh => mh.Id);
-
-            builder
                 .Property(p => p.PicutreUrl)
                 .HasMaxLength(MaxUrlLength);
         }
