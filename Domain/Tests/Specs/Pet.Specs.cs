@@ -44,7 +44,7 @@ namespace Domain.Tests.Specs
             pet.UpdatePicture(updatedPictureUrl);
 
             //Assert
-            Assert.Equal(pet.PicutreUrl, updatedPictureUrl);
+            Assert.Equal(pet.PictureUrl, updatedPictureUrl);
         }
     }
 }

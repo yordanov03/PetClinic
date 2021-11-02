@@ -4,7 +4,7 @@ using System;
 
 namespace Domain.Models
 {
-    public class Appointment : Entity<int>
+    public class Appointment : Entity<int>, IAggregateRoot
     {
         public Appointment(
             string diagnose,
