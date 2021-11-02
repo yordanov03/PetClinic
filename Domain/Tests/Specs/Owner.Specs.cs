@@ -18,5 +18,19 @@ namespace Domain.Tests.Specs
             //Assert
             owner.Should().NotThrow<InvalidOwnerException>();
         }
+
+        [Fact]
+        public void UpdatePhoneNumber()
+        {
+            //Arrange
+            var owner = A.Dummy<Owner>();
+            var updatedPhoneNumber = "+98766576732";
+
+            //Act
+            owner.UpdatePhoneNumber(updatedPhoneNumber);
+
+            //Assert
+            Assert.Equal(owner.PhoneNumber, updatedPhoneNumber);
+        }
     }
 }

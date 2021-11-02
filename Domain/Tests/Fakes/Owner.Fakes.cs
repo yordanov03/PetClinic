@@ -10,9 +10,9 @@ namespace Domain.Tests.Fakes
         {
             public Priority Priority => Priority.Default;
 
-            public bool CanCreate(Type type) => true;
+            public bool CanCreate(Type type) => type == typeof(Owner);
 
-            public object Create(Type type) =>
+            public object? Create(Type type) =>
                 new Owner(
                     "some owner",
                     "+123446568");

@@ -10,11 +10,11 @@ namespace Domain.Tests.Fakes
         {
             public Priority Priority => Priority.Default;
 
-            public bool CanCreate(Type type) => true;
+            public bool CanCreate(Type type) => type == typeof(Appointment);
 
-            public object Create(Type type) =>
+            public object? Create(Type type) =>
                 new Appointment(
-                    "some diagnose",
+                    "",
                     DateTime.Now,
                     new Pet(
                         "a pet",
@@ -23,9 +23,7 @@ namespace Domain.Tests.Fakes
                         new Owner(
                             "some owner",
                             "+1234568"),
-                        "https://toppng.com/uploads/preview/cat-11525956124t37pf0dhfz.png",
-                        new Doctor(
-                            "some doctor")));
+                        "https://toppng.com/uploads/preview/cat-11525956124t37pf0dhfz.png"));
             
         }
     }
