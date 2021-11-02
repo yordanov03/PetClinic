@@ -8,30 +8,39 @@ namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
-        private readonly List<Appointment> medicalHistory;
-
         public Pet(
             string name,
             int age,
             Spicie spicie,
             Owner owner,
-            string picture)
+            string pictureUrl)
         {
-            Validate(name, age, picture);
+            Validate(name, age, pictureUrl);
 
             this.Name = name;
             this.Age = age;
             this.Spicie = spicie;
             this.Owner = owner;
-            this.Picutre = picture;
-            this.medicalHistory = new List<Appointment>();
+            this.PictureUrl = pictureUrl;
+        }
+
+        internal Pet(
+            string name,
+            int age,
+            string pictureUrl
+            )
+        {
+            this.Name = name;
+            this.Age = age;
+            this.PictureUrl = pictureUrl;
+            this.Spicie = default!;
+            this.Owner = default!;
         }
         public string Name { get; private set; }
         public int Age { get; private set; }
-        public Spicie Spicie{ get; private set; }
+        public Spicie Spicie { get; private set; }
         public Owner Owner { get; private set; }
-        public string Picutre { get; private set; }
-        public IReadOnlyCollection<Appointment> MedicalHistory => this.medicalHistory.ToList().AsReadOnly();
+        public string PictureUrl { get; private set; }
 
         private void Validate(
             string name,
@@ -57,10 +66,10 @@ namespace Domain.Models
                 MaxAge,
                 nameof(this.Age));
 
-        private void ValidatePictureUrl(string picture) =>
+        private void ValidatePictureUrl(string pictureUrl) =>
             Guard.ForValidUrl<InvalidPetException>(
-                picture,
-                nameof(this.Picutre));
+                pictureUrl,
+                nameof(this.PictureUrl));
 
         public Pet UpdateAge(int age)
         {
@@ -69,11 +78,12 @@ namespace Domain.Models
             return this;
         }
 
-        public Pet UpdatePicture(string picture)
+        public Pet UpdatePicture(string pictureUrl)
         {
-            ValidatePictureUrl(picture);
-            this.Picutre = picture;
+            ValidatePictureUrl(pictureUrl);
+            this.PictureUrl = pictureUrl;
             return this;
         }
     }
 }
+

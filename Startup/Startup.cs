@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Web;
+using Infrastructure;
 
 namespace Startup
 {
@@ -28,9 +29,9 @@ namespace Startup
         {
 
             services.AddControllers();
-            services.AddDomain();
-            services.AddApplication(this.Configuration);
-            //services.AddInfrastructure(this.Configuration);
+            //services.AddDomain();
+            //services.AddApplication(this.Configuration);
+            services.AddInfrastructure(this.Configuration);
             services.AddWebComponents();
             services.AddSwaggerGen(c =>
             {

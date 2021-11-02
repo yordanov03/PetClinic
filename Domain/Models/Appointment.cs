@@ -4,7 +4,7 @@ using System;
 
 namespace Domain.Models
 {
-    public class Appointment : Entity<int>
+    public class Appointment : Entity<int>, IAggregateRoot
     {
         public Appointment(
             string diagnose,
@@ -16,6 +16,15 @@ namespace Domain.Models
             this.Diagnose = diagnose;
             this.AppointmentTime = appointmentTime;
             this.Pet = pet;
+        }
+
+        private Appointment(
+           string diagnose,
+           DateTime appointmentTime)
+        {
+            this.Diagnose = diagnose;
+            this.AppointmentTime = appointmentTime;
+            this.Pet = default!;
         }
         public string Diagnose { get; private set; }
         public DateTime AppointmentTime { get; private set; }
