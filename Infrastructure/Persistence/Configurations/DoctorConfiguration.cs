@@ -17,29 +17,21 @@ namespace Infrastructure.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(MaxNameLength);
 
-            //builder
-            //    .HasMany(d => d.Appointments)
-            //    .WithOne()
-            //    .Metadata
-            //    .PrincipalToDependent
-            //    .SetField("appointmentId");
+            builder
+                .HasMany(d => d.Appointments)
+                .WithOne()
+                .Metadata
+                .PrincipalToDependent
+                .SetField("appointments");
+
 
             builder
-    .HasMany(d => d.Appointments)
-    .WithOne()
-    .HasForeignKey(a => a.Id);
-
-            //builder
-            //    .HasMany(d => d.Patients)
-            //    .WithOne()
-            //    .Metadata
-            //    .PrincipalToDependent
-            //    .SetField("patientId");
-
-            builder
-    .HasMany(d => d.Patients)
-    .WithOne()
-    .HasForeignKey(p => p.Id);
+                .HasMany(d => d.Patients)
+                .WithOne()
+                .Metadata
+                .PrincipalToDependent
+                .SetField("patients");
+            ;
         }
     }
 }

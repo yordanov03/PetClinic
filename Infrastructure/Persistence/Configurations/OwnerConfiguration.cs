@@ -12,13 +12,6 @@ namespace Infrastructure.Persistence.Configurations
             builder
                 .HasKey(o => o.Id);
 
-            //builder
-            //    .HasMany(o => o.Pets)
-            //    .WithOne()
-            //    .Metadata
-            //    .PrincipalToDependent
-            //    .SetField("PetId");
-
             builder
                 .HasMany(o => o.Pets)
                 .WithOne()

@@ -8,8 +8,6 @@ namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
-        private readonly List<Appointment> medicalHistory;
-
         public Pet(
             string name,
             int age,
@@ -23,10 +21,10 @@ namespace Domain.Models
             this.Age = age;
             this.Spicie = spicie;
             this.Owner = owner;
-            this.PicutreUrl = pictureUrl;
+            this.PictureUrl = pictureUrl;
         }
 
-        private Pet(
+        internal Pet(
             string name,
             int age,
             string pictureUrl
@@ -34,7 +32,7 @@ namespace Domain.Models
         {
             this.Name = name;
             this.Age = age;
-            this.PicutreUrl = pictureUrl;
+            this.PictureUrl = pictureUrl;
             this.Spicie = default!;
             this.Owner = default!;
         }
@@ -42,7 +40,7 @@ namespace Domain.Models
         public int Age { get; private set; }
         public Spicie Spicie { get; private set; }
         public Owner Owner { get; private set; }
-        public string PicutreUrl { get; private set; }
+        public string PictureUrl { get; private set; }
 
         private void Validate(
             string name,
@@ -71,7 +69,7 @@ namespace Domain.Models
         private void ValidatePictureUrl(string pictureUrl) =>
             Guard.ForValidUrl<InvalidPetException>(
                 pictureUrl,
-                nameof(this.PicutreUrl));
+                nameof(this.PictureUrl));
 
         public Pet UpdateAge(int age)
         {
@@ -83,8 +81,9 @@ namespace Domain.Models
         public Pet UpdatePicture(string pictureUrl)
         {
             ValidatePictureUrl(pictureUrl);
-            this.PicutreUrl = pictureUrl;
+            this.PictureUrl = pictureUrl;
             return this;
         }
     }
 }
+

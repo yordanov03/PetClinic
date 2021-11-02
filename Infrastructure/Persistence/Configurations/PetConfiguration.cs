@@ -22,7 +22,7 @@ namespace Infrastructure.Persistence.Configurations
                 .IsRequired();
 
             builder
-                .Property(p => p.PicutreUrl)
+                .Property(p => p.PictureUrl)
                 .HasMaxLength(MaxUrlLength);
         }
     }
