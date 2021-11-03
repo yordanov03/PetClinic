@@ -17,8 +17,9 @@ namespace Domain.Factories.PetsFactory
         {
             if (!spicieSet)
             {
-                throw new InvalidPetException("");
+                throw new InvalidPetException("Spicie is not set");
             }
+
             return new Pet(
                 petName,
                 petAge,

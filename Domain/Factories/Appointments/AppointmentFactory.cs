@@ -42,6 +42,7 @@ namespace Domain.Factories.Appointments
         public IAppointmentFactory WithPet(Pet pet)
         {
             this.pet = pet;
+            this.petSet = true;
             return this;
         }
 
