@@ -1,7 +1,22 @@
-﻿namespace Domain.Models
+﻿using Domain.Exceptions;
+using PetClinic.Domain.Common;
+
+namespace Domain.Models
 {
-     public enum Spicie
+     public class Spicie : Entity<int>
     {
-        cat, dog, bird, rodent, fish, lizzard
+        public Spicie(string name)
+        {
+            this.Validate(name);
+            this.Name = name;
+        }
+        public string Name { get; }
+
+        private void Validate(string name)
+        {
+            Guard.AgainstEmptyString<InvalidPetException>(
+                name,
+                nameof(Name));
+        }
     }
 }

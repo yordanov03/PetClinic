@@ -1,4 +1,5 @@
 ﻿using Domain.Exceptions;
+using Domain.Models.InitialData;
 using PetClinic.Domain.Common;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,11 @@ namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
+
+        private static readonly IEnumerable<Spicie> AllowedSpicies
+            = new SpiciesData().GetData().Cast<Spicie>();
+
+
         public Pet(
             string name,
             int age,
@@ -15,7 +21,9 @@ namespace Domain.Models
             Owner owner,
             string pictureUrl)
         {
-            Validate(name, age, pictureUrl);
+
+            Validate(name, age, pictureUrl, spicie);
+
 
             this.Name = name;
             this.Age = age;
@@ -45,11 +53,13 @@ namespace Domain.Models
         private void Validate(
             string name,
             int age,
-            string picture)
+            string picture,
+            Spicie spicie)
         {
             ValidateName(name);
             ValidateAge(age);
             ValidatePictureUrl(picture);
+            ValidateSpicie(spicie);
         }
 
         private void ValidateName(string name) =>
@@ -70,6 +80,22 @@ namespace Domain.Models
             Guard.ForValidUrl<InvalidPetException>(
                 pictureUrl,
                 nameof(this.PictureUrl));
+
+
+        private void ValidateSpicie(Spicie spicie)
+        {
+            var spicieName = spicie?.Name;
+
+            if(AllowedSpicies.Any(s=>s.Name == spicieName))
+            {
+                return;
+            }
+
+            var allowedSpicieNames = string.Join(", ", AllowedSpicies.Select(c => $"'{c.Name}'"));
+
+            throw new InvalidPetException($"'{spicieName}' is not a valid category. Allowed values are: {allowedSpicieNames}.");
+        }
+
 
         public Pet UpdateAge(int age)
         {
