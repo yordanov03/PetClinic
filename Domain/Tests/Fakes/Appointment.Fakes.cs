@@ -14,6 +14,7 @@ namespace Domain.Tests.Fakes
 
             public object? Create(Type type) =>
                 new Appointment(
+
                     "some title",
                     "",
                     DateTime.Now,
