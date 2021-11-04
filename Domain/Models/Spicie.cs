@@ -10,6 +10,12 @@ namespace Domain.Models
             this.Validate(name);
             this.Name = name;
         }
+
+        internal Spicie()
+        {
+            this.Name = default!;
+        }
+
         public string Name { get; }
 
         private void Validate(string name)

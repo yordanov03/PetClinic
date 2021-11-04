@@ -30,12 +30,12 @@ namespace Startup
 
             services.AddControllers();
             //services.AddDomain();
-            //services.AddApplication(this.Configuration);
+            services.AddApplication(this.Configuration);
             services.AddInfrastructure(this.Configuration);
             services.AddWebComponents();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Startup", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PetClinic", Version = "v1" });
             });
         }
 
@@ -54,6 +54,8 @@ namespace Startup
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
