@@ -1,9 +1,9 @@
-﻿namespace PetClinic.Web.Common
-{
-    using System.Threading.Tasks;
-    using Application.Common;
-    using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using PetClinic.Application.Common;
 
+namespace PetClinic.Web.Common
+{
     public static class ResultExtensions
     {
         public static async Task<ActionResult<TData>> ToActionResult<TData>(this Task<TData> resultTask)
