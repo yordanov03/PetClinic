@@ -1,12 +1,12 @@
-﻿namespace PetClinic.Web.Features
-{
-    using System.Threading.Tasks;
-    using Application.Features.Identity.Commands.ChangePassword;
-    using Application.Features.Identity.Commands.CreateUser;
-    using Application.Features.Identity.Commands.LoginUser;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using PetClinic.Application.Features.Identity.Commands.ChangePassword;
+using PetClinic.Application.Features.Identity.Commands.CreateUser;
+using PetClinic.Application.Features.Identity.Commands.LoginUser;
 
+namespace PetClinic.Web.Features
+{
     public class IdentityController : ApiController
     {
         [HttpPost]

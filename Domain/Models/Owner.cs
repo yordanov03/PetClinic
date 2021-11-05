@@ -6,7 +6,7 @@ using static PetClinic.Domain.Models.ModelConstants.Common;
 
 namespace Domain.Models
 {
-    public class Owner : Entity<int>
+    public class Owner : Entity<int>, IAggregateRoot
     {
         private readonly List<Pet> pets;
 
@@ -50,7 +50,5 @@ namespace Domain.Models
             this.PhoneNumber = phoneNumber;
             return this;
         }
-
-        public void AssignPetToOwner(Pet pet) => this.pets.Add(pet);
     }
 }

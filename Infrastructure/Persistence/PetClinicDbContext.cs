@@ -1,10 +1,12 @@
 ﻿using Domain.Models;
+using Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace Infrastructure.Persistence
 {
-    internal class PetClinicDbContext : DbContext
+    internal class PetClinicDbContext : IdentityDbContext<User>
     {
         public PetClinicDbContext(DbContextOptions<PetClinicDbContext> options) : base(options) { }
 
