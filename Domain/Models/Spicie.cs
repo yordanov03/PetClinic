@@ -16,6 +16,7 @@ namespace Domain.Models
             this.Name = default!;
         }
 
+
         public string Name { get; }
 
         private void Validate(string name)
