@@ -9,8 +9,10 @@ namespace Domain.Models
 {
     public class Pet : Entity<int>, IAggregateRoot
     {
+
         private static readonly IEnumerable<Spicie> AllowedSpicies
             = new SpiciesData().GetData().Cast<Spicie>();
+
 
         public Pet(
             string name,
@@ -19,7 +21,9 @@ namespace Domain.Models
             Owner owner,
             string pictureUrl)
         {
+
             Validate(name, age, pictureUrl, spicie);
+
 
             this.Name = name;
             this.Age = age;
@@ -77,6 +81,7 @@ namespace Domain.Models
                 pictureUrl,
                 nameof(this.PictureUrl));
 
+
         private void ValidateSpicie(Spicie spicie)
         {
             var spicieName = spicie?.Name;
@@ -90,6 +95,7 @@ namespace Domain.Models
 
             throw new InvalidPetException($"'{spicieName}' is not a valid category. Allowed values are: {allowedSpicieNames}.");
         }
+
 
         public Pet UpdateAge(int age)
         {

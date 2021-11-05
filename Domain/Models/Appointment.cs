@@ -12,6 +12,7 @@ namespace Domain.Models
             DateTime appointmentTime,
             Pet pet)
         {
+
             Validate(title, appointmentTime);
 
             this.Title = title;
@@ -21,15 +22,18 @@ namespace Domain.Models
         }
 
         private Appointment(
+
             string title,
            string diagnose,
            DateTime appointmentTime)
         {
             this.Title = title;
+
             this.Diagnose = diagnose;
             this.AppointmentTime = appointmentTime;
             this.Pet = default!;
         }
+
 
         public string Title { get; private set; }
         public string Diagnose { get; private set; }
