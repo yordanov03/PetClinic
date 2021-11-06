@@ -1,22 +1,17 @@
-﻿using Application.Contracts;
-using Domain.Models;
+﻿using Application.Features.Appointments.Commnds.Create;
 using Microsoft.AspNetCore.Mvc;
 using PetClinic.Web;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Web.Features
 {
 
     public class AppointmentsController : ApiController
     {
-        private readonly IRepository<Appointment> appointments;
 
-        public AppointmentsController(IRepository<Appointment> appointments)
-            => this.appointments = appointments;
-
-
-        [HttpGet]
-        public IEnumerable<Appointment> GetAllAppointments() =>
-            (IEnumerable<Appointment>)this.appointments;
+        [HttpPost]
+        public async Task<ActionResult<CreateAppointmentOutputModel>> Create(
+            CreateAppointmentCommand command) =>
+            await this.Send(command);
     }
 }

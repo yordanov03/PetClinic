@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Pets
 {
-    public interface IPetRepository : IRepository<Pet>
+    public interface IPetsRepository : IRepository<Pet>
     {
         Task<Pet> FindById(int id, CancellationToken cancellationToken = default);
         Task<bool> Delete(int id, CancellationToken cancellationToken);
