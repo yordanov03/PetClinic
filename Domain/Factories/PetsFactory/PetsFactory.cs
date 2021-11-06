@@ -54,6 +54,7 @@ namespace Domain.Factories.PetsFactory
         public IPetsFactory WithSpicie(Spicie spicie)
         {
             this.petSpecie = spicie;
+            this.spicieSet = true;
             return this;
         }
     }

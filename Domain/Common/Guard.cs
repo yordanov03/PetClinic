@@ -95,16 +95,20 @@
         public static void ForValidPhoneNumber<TException>(string phoneNumber, string name = "Value")
            where TException : BaseDomainException, new()
         {
-            bool validPhoneNumber = Regex.IsMatch(phoneNumber, PhoneNumber.PhoneNumberRegularExpression);
+            bool validPhoneNumber;
 
-            if (phoneNumber.Length >= ModelConstants.PhoneNumber.MinPhoneNumberLength &&
-                phoneNumber.Length<= ModelConstants.PhoneNumber.MaxPhoneNumberLength &&
-                validPhoneNumber)
+            if (!string.IsNullOrEmpty(phoneNumber))
             {
-                return;
-            }
+                validPhoneNumber = Regex.IsMatch(phoneNumber, PhoneNumber.PhoneNumberRegularExpression);
 
-            ThrowException<TException>($"{name} must be a valid URL.");
+                if (phoneNumber.Length >= ModelConstants.PhoneNumber.MinPhoneNumberLength &&
+                    phoneNumber.Length <= ModelConstants.PhoneNumber.MaxPhoneNumberLength)
+                {
+                    return;
+                }
+            }
+            
+            ThrowException<TException>($"{name} must be a valid Phone number.");
         }
 
 

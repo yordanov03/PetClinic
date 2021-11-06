@@ -50,5 +50,7 @@ namespace Domain.Models
             this.PhoneNumber = phoneNumber;
             return this;
         }
+
+        public void AssignPetToOwner(Pet pet) => this.pets.Add(pet);
     }
 }
