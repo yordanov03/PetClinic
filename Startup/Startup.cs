@@ -29,7 +29,7 @@ namespace Startup
         {
 
             services.AddControllers();
-            //services.AddDomain();
+            services.AddDomain();
             services.AddApplication(this.Configuration);
             services.AddInfrastructure(this.Configuration);
             services.AddWebComponents();

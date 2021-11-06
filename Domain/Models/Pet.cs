@@ -13,7 +13,6 @@ namespace Domain.Models
         private static readonly IEnumerable<Spicie> AllowedSpicies
             = new SpiciesData().GetData().Cast<Spicie>();
 
-
         public Pet(
             string name,
             int age,
