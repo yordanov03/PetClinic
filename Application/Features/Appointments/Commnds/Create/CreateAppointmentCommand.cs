@@ -19,12 +19,12 @@ namespace Application.Features.Appointments.Commnds.Create
         {
             private readonly IAppointmentRepository appointmentRepository;
             private readonly IPetsRepository petRepository;
-            private readonly IAppointmentFactory appointmentFactory;
+            private readonly IAppointmentsFactory appointmentFactory;
 
             public CreateAppointmentCommandHandler(
                 IAppointmentRepository appointmentRepository,
                 IPetsRepository petRepository,
-                IAppointmentFactory appointmentFactory)
+                IAppointmentsFactory appointmentFactory)
             {
                 this.appointmentRepository = appointmentRepository;
                 this.petRepository = petRepository;

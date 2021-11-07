@@ -41,5 +41,10 @@ namespace Infrastructure.Persistence.Repositories
         await this.Data
             .Pets
             .FirstOrDefaultAsync(p => p.Name == name);
+
+        public async Task<Spicie> FindSpicieById(int id, CancellationToken cancellationToken) =>
+        await this.Data
+            .Spicies
+            .FirstOrDefaultAsync(s => s.Id == id);
     }
 }

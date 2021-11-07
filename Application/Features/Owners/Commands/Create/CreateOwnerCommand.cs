@@ -1,18 +1,15 @@
-﻿using Domain.Factories.Owners;
+﻿using Application.Features.Owners.Create;
+using Domain.Factories.Owners;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Features.Owners.Create
+namespace Application.Features.Owners.Commands.Create
 {
     public class CreateOwnerCommand : IRequest<CreateOwnerOutputModel>
     {
-        public string Name { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Name { get; }
+        public string PhoneNumber { get; }
 
         public class CreateOwnerCommandHandler : IRequestHandler<CreateOwnerCommand, CreateOwnerOutputModel>
         {

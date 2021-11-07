@@ -14,6 +14,7 @@ namespace Infrastructure.Persistence
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Pet> Pets { get; set; }
+        public DbSet<Spicie> Spicies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

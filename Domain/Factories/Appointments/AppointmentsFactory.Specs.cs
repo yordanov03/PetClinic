@@ -13,7 +13,7 @@ namespace Domain.Factories.Appointments
         public void BuildShouldNotThrowExceptionWhenAllParametersAreValid()
         {
             //Arrange
-            var appointmentFactory = new AppointmentFactory();
+            var appointmentFactory = new AppointmentsFactory();
 
             //Act
             Action act = () => appointmentFactory
@@ -31,7 +31,7 @@ namespace Domain.Factories.Appointments
         public void BuildShouldThrowExceptionWhenTitleNotSet()
         {
             //Arrange
-            var appointmentFactory = new AppointmentFactory();
+            var appointmentFactory = new AppointmentsFactory();
 
             //Act
             Action act = () => appointmentFactory
@@ -48,7 +48,7 @@ namespace Domain.Factories.Appointments
         public void BuildShouldThrowExceptionWhenTimeNotSet()
         {
             //Arrange
-            var appointmentFactory = new AppointmentFactory();
+            var appointmentFactory = new AppointmentsFactory();
 
             //Act
             Action act = () => appointmentFactory
@@ -65,7 +65,7 @@ namespace Domain.Factories.Appointments
         public void BuildShouldThrowExceptionWhenPetNotSet()
         {
             //Arrange
-            var appointmentFactory = new AppointmentFactory();
+            var appointmentFactory = new AppointmentsFactory();
 
             //Act
             Action act = () => appointmentFactory

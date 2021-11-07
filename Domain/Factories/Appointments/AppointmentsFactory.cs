@@ -4,7 +4,7 @@ using System;
 
 namespace Domain.Factories.Appointments
 {
-    internal class AppointmentFactory : IAppointmentFactory
+    internal class AppointmentsFactory : IAppointmentsFactory
     {
         private string appointmentTitle = default!;
         private string appointmentDiagnose = default!;
@@ -27,26 +27,26 @@ namespace Domain.Factories.Appointments
                 this.pet);
         }
 
-        public IAppointmentFactory WithAppointmentTime(DateTime appointmentTime)
+        public IAppointmentsFactory WithAppointmentTime(DateTime appointmentTime)
         {
             this.scheduledAppointmentTime = appointmentTime;
             return this;
         }
 
-        public IAppointmentFactory WithDiagnose(string diagnose)
+        public IAppointmentsFactory WithDiagnose(string diagnose)
         {
             this.appointmentDiagnose = diagnose;
             return this;
         }
 
-        public IAppointmentFactory WithPet(Pet pet)
+        public IAppointmentsFactory WithPet(Pet pet)
         {
             this.pet = pet;
             this.petSet = true;
             return this;
         }
 
-        public IAppointmentFactory WithTitle(string title)
+        public IAppointmentsFactory WithTitle(string title)
         {
             this.appointmentTitle = title;
             return this;
