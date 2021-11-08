@@ -1,10 +1,10 @@
-﻿namespace PetClinic.Application.Exceptions
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using FluentValidation.Results;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using FluentValidation.Results;
 
+namespace PetClinic.Application.Exceptions
+{
     public class ModelValidationException : Exception
     {
         public ModelValidationException()

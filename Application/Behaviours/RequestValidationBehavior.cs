@@ -1,14 +1,13 @@
-﻿namespace PetClinic.Application.Behaviours
-{
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Exceptions;
-    using FluentValidation;
-    using MediatR;
+﻿using FluentValidation;
+using MediatR;
+using PetClinic.Application.Exceptions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace PetClinic.Application.Behaviours
+{
     public class RequestValidationBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
@@ -19,8 +18,8 @@
             => this.validators = validators;
 
         public Task<TResponse> Handle(
-            TRequest request, 
-            CancellationToken cancellationToken, 
+            TRequest request,
+            CancellationToken cancellationToken,
             RequestHandlerDelegate<TResponse> next)
         {
             var context = new ValidationContext<object>(request);

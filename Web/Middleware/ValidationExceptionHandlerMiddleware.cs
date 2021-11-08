@@ -1,15 +1,15 @@
-﻿namespace PetClinic.Web.Middleware
-{
-    using System;
-    using System.Net;
-    using System.Threading.Tasks;
-    using Application.Exceptions;
-    using Domain.Exceptions;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Http;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Serialization;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using PetClinic.Application.Exceptions;
+using PetClinic.Domain.Exceptions;
 
+namespace PetClinic.Web.Middleware
+{
     public class ValidationExceptionHandlerMiddleware
     {
         private readonly RequestDelegate next;

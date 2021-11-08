@@ -1,7 +1,7 @@
-﻿namespace PetClinic.Application.Exceptions
-{
-    using System;
+﻿using System;
 
+namespace PetClinic.Application.Exceptions
+{
     public class NotFoundException : Exception
     {
         public NotFoundException(string name, object key)

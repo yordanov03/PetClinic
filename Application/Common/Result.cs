@@ -1,9 +1,9 @@
-﻿namespace PetClinic.Application.Common
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace PetClinic.Application.Common
+{
     public class Result
     {
         private readonly List<string> errors;
