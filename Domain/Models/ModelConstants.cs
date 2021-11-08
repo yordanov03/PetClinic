@@ -11,7 +11,8 @@
             public const int MaxUrlLength = 2048;
             public const int Zero = 0;
             public const int MaxAge = 30;
-            public const int MaxDiagnoseLength = 200;
+            public const int MaxStringLength = 200;
+            public const int MinStringLength = 8;
         }
 
         public class PhoneNumber

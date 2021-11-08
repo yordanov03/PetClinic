@@ -1,4 +1,5 @@
-﻿using Application.Features.Owners.Create;
+﻿using Application.Features.Owners.Commands.Common;
+using Application.Features.Owners.Create;
 using Domain.Factories.Owners;
 using MediatR;
 using System.Threading;
@@ -6,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Owners.Commands.Create
 {
-    public class CreateOwnerCommand : IRequest<CreateOwnerOutputModel>
+    public class CreateOwnerCommand : OwnerCommand<CreateOwnerCommand>, IRequest<CreateOwnerOutputModel>
     {
-        public string Name { get; }
-        public string PhoneNumber { get; }
-
         public class CreateOwnerCommandHandler : IRequestHandler<CreateOwnerCommand, CreateOwnerOutputModel>
         {
             private readonly IOwnersRepository ownersRepository;

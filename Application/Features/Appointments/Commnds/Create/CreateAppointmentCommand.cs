@@ -1,20 +1,14 @@
-﻿using Application.Features.Pets;
+﻿using Application.Features.Appointments.Common;
+using Application.Features.Pets;
 using Domain.Factories;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Features.Appointments.Commnds.Create
 {
-    public class CreateAppointmentCommand : IRequest<CreateAppointmentOutputModel>
+    public class CreateAppointmentCommand : AppointmentCommand<CreateAppointmentCommand>, IRequest<CreateAppointmentOutputModel>
     {
-        public string Title { get; }
-        public string Diagnose { get; }
-        public DateTime AppointmentTime { get; }
-        public int PetId { get; }
-
-
         public class CreateAppointmentCommandHandler : IRequestHandler<CreateAppointmentCommand, CreateAppointmentOutputModel>
         {
             private readonly IAppointmentRepository appointmentRepository;

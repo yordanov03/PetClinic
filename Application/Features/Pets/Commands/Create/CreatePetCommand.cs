@@ -1,23 +1,14 @@
 ﻿using Application.Features.Owners;
+using Application.Features.Pets.Commands.Common;
 using Domain.Factories.PetsFactory;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Features.Pets.Commands.Create
 {
-    public class CreatePetCommand : IRequest<CreatePetOutputModel>
+    public class CreatePetCommand : PetCommand<CreatePetCommand>, IRequest<CreatePetOutputModel>
     {
-        public string Name { get;  }
-        public int Age { get;  }
-        public int OwnerId { get;  }
-        public string PictureUrl { get;  }
-        public int SpecieId { get;  }
-
         public class CreatePetCommandHandler : IRequestHandler<CreatePetCommand, CreatePetOutputModel>
         {
 
