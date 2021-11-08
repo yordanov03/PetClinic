@@ -14,7 +14,7 @@ namespace Infrastructure.Persistence.Configurations
 
             builder
                 .Property(a => a.Diagnose)
-                .HasMaxLength(MaxDiagnoseLength)
+                .HasMaxLength(MaxStringLength)
                 .ValueGeneratedOnUpdate();
 
             builder
