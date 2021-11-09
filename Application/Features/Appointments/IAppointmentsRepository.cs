@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Appointments
 {
-    public interface IAppointmentRepository : IRepository<Appointment>
+    public interface IAppointmentsRepository : IRepository<Appointment>
     {
         Task<Appointment> FindById(int id, CancellationToken cancellationToken = default);
         Task<bool> DeleteAppointment(int id, CancellationToken cancellationToken = default);

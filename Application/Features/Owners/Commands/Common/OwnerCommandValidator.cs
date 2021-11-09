@@ -7,7 +7,7 @@ namespace Application.Features.Owners.Commands.Common
     public class OwnerCommandValidator<TCommand> : AbstractValidator<OwnerCommand<TCommand>>
         where TCommand : EntityCommand<int>
     {
-        public OwnerCommandValidator()
+        public OwnerCommandValidator(IOwnersRepository ownersRepository)
         {
             this.RuleFor(o => o.Name)
                 .MinimumLength(MinNameLength)
@@ -17,6 +17,7 @@ namespace Application.Features.Owners.Commands.Common
             this.RuleFor(o => o.PhoneNumber)
                 .MinimumLength(MinPhoneNumberLength)
                 .MaximumLength(MaxPhoneNumberLength)
+                .Matches(PhoneNumberRegularExpression)
                 .NotEmpty();
         }
     }

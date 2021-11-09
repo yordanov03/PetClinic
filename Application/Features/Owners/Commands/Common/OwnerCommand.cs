@@ -1,8 +1,6 @@
-﻿using PetClinic.Domain.Common;
-
-namespace Application.Features.Owners.Commands.Common
+﻿namespace Application.Features.Owners.Commands.Common
 {
-    public class OwnerCommand<TCommand> : Entity<int>
+    public abstract class OwnerCommand<TCommand> : EntityCommand<int>
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }

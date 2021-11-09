@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Repositories
 {
-    internal class AppointmentRepository : DataRepository<Appointment>, IAppointmentRepository
+    internal class AppointmentRepository : DataRepository<Appointment>, IAppointmentsRepository
     {
         public AppointmentRepository(PetClinicDbContext db) : base(db) { }
 

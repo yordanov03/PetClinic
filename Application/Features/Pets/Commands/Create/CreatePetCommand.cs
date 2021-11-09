@@ -42,6 +42,8 @@ namespace Application.Features.Pets.Commands.Create
                     .WithSpicie(spicie)
                     .Build();
 
+                owner.AssignPetToOwner(pet);
+
                 await this.petsRepository.Save(pet, cancellationToken);
                 return new CreatePetOutputModel(pet.Id);
 

@@ -11,12 +11,12 @@ namespace Application.Features.Appointments.Commnds.Create
     {
         public class CreateAppointmentCommandHandler : IRequestHandler<CreateAppointmentCommand, CreateAppointmentOutputModel>
         {
-            private readonly IAppointmentRepository appointmentRepository;
+            private readonly IAppointmentsRepository appointmentRepository;
             private readonly IPetsRepository petRepository;
             private readonly IAppointmentsFactory appointmentFactory;
 
             public CreateAppointmentCommandHandler(
-                IAppointmentRepository appointmentRepository,
+                IAppointmentsRepository appointmentRepository,
                 IPetsRepository petRepository,
                 IAppointmentsFactory appointmentFactory)
             {
