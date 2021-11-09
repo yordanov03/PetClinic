@@ -11,7 +11,7 @@ namespace Application.Features.Appointments
         Task<Appointment> FindById(int id, CancellationToken cancellationToken = default);
         Task<bool> DeleteAppointment(int id, CancellationToken cancellationToken = default);
         Task<IEnumerable<Appointment>> GetAllByDoctor(string doctorName, CancellationToken cancellationToken = default);
-        Task<IEnumerable<Appointment>> GetAllByPet(string petName, CancellationToken cancellationToken = default);
+        Task<IEnumerable<Appointment>> GetAllByPetId(int petId, CancellationToken cancellationToken = default);
     }
 }
 

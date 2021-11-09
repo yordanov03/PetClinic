@@ -1,4 +1,5 @@
 ﻿using Application.Features.Appointments.Commnds.Create;
+using Application.Features.Appointments.Commnds.Delete;
 using Application.Features.Appointments.Commnds.Edit;
 using Microsoft.AspNetCore.Mvc;
 using PetClinic.Application.Common;
@@ -19,6 +20,11 @@ namespace Web.Features
         [HttpPut]
         public async Task<ActionResult<Result>> Edit(
             EditAppointmentCommand command) =>
+            await this.Send(command);
+
+        [HttpDelete]
+        public async Task<ActionResult<Result>> Delete(
+            DeleteAppointmentCommand command) =>
             await this.Send(command);
     }
 }
