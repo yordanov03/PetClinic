@@ -42,10 +42,10 @@ namespace Infrastructure.Persistence.Repositories
             .Select(a => a.Appointments)
             .ToListAsync(cancellationToken);
 
-        public async Task<IEnumerable<Appointment>> GetAllByPet(string petName, CancellationToken cancellationToken = default) =>
-            (IEnumerable<Appointment>)this.Data
+        public async Task<IEnumerable<Appointment>> GetAllByPetId(int petId, CancellationToken cancellationToken = default) =>
+            (IEnumerable<Appointment>)await this.Data
             .Appointments
-            .Where(a => a.Pet.Name == petName)
+            .Where(a => a.Pet.Id == petId)
             .ToListAsync(cancellationToken);
         
     }

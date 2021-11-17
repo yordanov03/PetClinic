@@ -1,4 +1,5 @@
 ﻿using Application.Features.Owners.Commands.Create;
+using Application.Features.Owners.Commands.Delete;
 using Application.Features.Owners.Commands.Edit;
 using Application.Features.Owners.Create;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,11 @@ namespace Web.Features
         [HttpPut]
         public async Task<ActionResult<Result>> Edit(
             EditOwnerCommand command) =>
+            await this.Send(command);
+
+        [HttpDelete]
+        public async Task<ActionResult<Result>> Delete(
+            DeleteOwnerCommand command) =>
             await this.Send(command);
     }
 }
