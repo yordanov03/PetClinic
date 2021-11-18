@@ -1,6 +1,9 @@
-﻿using Application.Features.Appointments.Commnds.Create;
+﻿using Application.Features.Appointments;
+using Application.Features.Appointments.Commnds.Create;
 using Application.Features.Appointments.Commnds.Delete;
 using Application.Features.Appointments.Commnds.Edit;
+using Application.Features.Appointments.Queries.GetByDoctorName;
+using Application.Features.Appointments.Queries.GetByPetName;
 using Microsoft.AspNetCore.Mvc;
 using PetClinic.Application.Common;
 using PetClinic.Web;
@@ -26,5 +29,15 @@ namespace Web.Features
         public async Task<ActionResult<Result>> Delete(
             DeleteAppointmentCommand command) =>
             await this.Send(command);
+
+        [HttpGet]
+        public async Task<ActionResult<AppointmentsOutputModel>> GetAppointmentsByPetName(
+            GetAppointmentsByPetNameQuery query) =>
+            await this.Send(query);
+
+        [HttpGet]
+        public async Task<ActionResult<AppointmentsOutputModel>> GetAppointmentsByDoctor(
+            GetAppointmentsByDoctorNameQuery query) =>
+            await this.Send(query);
     }
 }
